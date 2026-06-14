@@ -182,14 +182,14 @@ function App() {
       {/* ─── Pull Quote ──────────────────────────── */}
       <aside className="pull-quote">
         <p>
-          Cô hầu gái vừa bưng trà ra, khẽ cúi đầu rồi lui ra góc phòng. Nàng nhìn theo, thoáng ngập ngừng, rồi nghiêng người sang ông thì thầm bằng một thứ tiếng lạ — mềm, nhẹ, như gió thoảng.
+          Nàng nghiêng người thì thầm với ông bằng một thứ tiếng lạ, để cô hầu gái đang bưng trà gần đó không hiểu được:
         </p>
         <p className="pull-quote-nalu">
           <q>Reli nifoi yamai mijau reuja verio?</q>
           <span className="pull-quote-vi">(Cô ấy trông dễ thương quá nhỉ)</span>
         </p>
         <p>
-          Ông khẽ nhếch môi, không đáp, chỉ lặng lẽ đưa mắt nhìn theo cô hầu. Nàng mỉm cười, vì biết ông hiểu. Và cô gái kia chẳng hề hay biết mình vừa là đề tài của một lời khen, giữa hai người xa lạ.
+          Ông khẽ cười, không đáp. Cô gái kia chẳng hề hay biết mình vừa là đề tài của một lời khen.
         </p>
       </aside>
 
