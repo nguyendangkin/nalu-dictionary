@@ -182,14 +182,14 @@ function App() {
       {/* ─── Pull Quote ──────────────────────────── */}
       <aside className="pull-quote">
         <p>
-          Dưới ánh nến, bên tách trà còn nóng, nàng nghiêng người thì thầm với ông bằng một thứ tiếng lạ — mềm, nhẹ, như một mật mã chỉ hai người biết:
+          Nàng nghiêng người thì thầm với ông bằng Verian, thứ ngôn ngữ mà con cháu các gia đình giàu có thường được học từ thuở nhỏ, và cũng là thứ tiếng mà cô hầu gái kia hẳn không thể hiểu.
         </p>
         <p className="pull-quote-nalu">
           <q>Reli nifoi yamai mijau reuja verio?</q>
           <span className="pull-quote-vi">(Cô ấy trông dễ thương quá nhỉ)</span>
         </p>
         <p>
-          Cô hầu gái bưng trà vẫn đứng đó, không hiểu một từ.
+          Ông khẽ cười, không đáp. Cô gái đang bưng trà khẽ cúi đầu bước qua, vài lọn tóc vàng nhạt thoát khỏi chiếc khăn trùm đầu đơn sơ. Cô hoàn toàn không hay biết rằng mình vừa trở thành đề tài của một lời khen.
         </p>
       </aside>
 
