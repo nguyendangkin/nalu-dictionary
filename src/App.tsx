@@ -18,32 +18,7 @@ for (const [vi, nw] of Object.entries(naluDictionary)) {
   dictLower.set(vi.toLowerCase(), nw)
 }
 
-const RULES = [
-  {
-    title: 'Phụ âm',
-    items: [
-      { label: 'Mềm', value: 'l, m, n, r, v, s, f, y, j, w' },
-    ],
-  },
-  {
-    title: 'Nguyên âm',
-    items: [
-      { label: 'Đơn', value: 'a, e, i, o, u' },
-      { label: 'Đôi', value: 'ai, ei, ia, ie, io, oi, ua, au, eu' },
-    ],
-  },
-  {
-    title: 'Cấu trúc âm tiết',
-    items: [
-      { label: 'Dạng', value: 'CV · CVV · CVC' },
-      { label: 'Phụ âm cuối', value: 'l, m, n, r' },
-    ],
-  },
-]
-
 const LETTER_GROUPS = '#abcdefghijklmnopqrstuvwxyz'.split('')
-
-const sampleWords = ['roma', 'lore', 'voimo', 'linia', 'nurai', 'roime', 'sowe', 'mijau']
 
 function speak(text: string) {
   if (!text.trim()) return
@@ -105,7 +80,6 @@ function App() {
   const [search, setSearch] = useState('')
   const [filterMode, setFilterMode] = useState<FilterMode>('all')
   const [page, setPage] = useState(1)
-  const [showRules, setShowRules] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const perPage = 60
 
@@ -203,52 +177,7 @@ function App() {
             nulo yuyale voami mova vianu lavu
           </p>
         </div>
-        <button
-          className="rules-toggle"
-          onClick={() => setShowRules(s => !s)}
-          aria-label="Quy tắc ngữ âm"
-        >
-          <span className="rules-toggle-icon">{showRules ? '✕' : '◈'}</span>
-          <span className="rules-toggle-label">Quy tắc</span>
-        </button>
       </header>
-
-      {/* ─── Rules Dropdown ──────────────────────── */}
-      {showRules && (
-        <div className="rules-overlay" onClick={() => setShowRules(false)} />
-      )}
-      <div className={`rules-dropdown ${showRules ? 'open' : ''}`}>
-        <div className="rules-dropdown-inner">
-          <div className="rules-groups">
-            {RULES.map(group => (
-              <div key={group.title} className="rules-group">
-                <h3 className="rules-group-title">{group.title}</h3>
-                {group.items.map(item => (
-                  <div key={item.label} className="rules-group-item">
-                    <span className="rules-group-label">{item.label}</span>
-                    <span className="rules-group-value">{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div className="rules-samples">
-            <h3 className="rules-sample-title">Ví dụ</h3>
-            <div className="rules-sample-chips">
-              {sampleWords.map(w => (
-                <button
-                  key={w}
-                  className="rules-chip"
-                  onClick={() => speak(w)}
-                  title="Nghe"
-                >
-                  {w}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* ─── Search ──────────────────────────────── */}
       <div className="search-section">
