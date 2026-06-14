@@ -67,7 +67,7 @@
 .pull-quote-nalu q::after  { content: '\201D'; }
 
 .pull-quote-vi {
-  color: var(--text-subtle);
+  font-style: normal;
 }
 
 /* ─── Search ─────────────────────────────────────── */
