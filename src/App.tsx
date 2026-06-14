@@ -179,6 +179,17 @@ function App() {
         </div>
       </header>
 
+      {/* ─── Pull Quote ──────────────────────────── */}
+      <aside className="pull-quote">
+        <p>
+          Nàng quay sang nói với ông ta, nàng bắt đầu nói một thứ tiếng khác, để tránh người hầu gần bên hiểu:
+        </p>
+        <p className="pull-quote-nalu">
+          <q>Reli nifoi yamai mijau reuja verio?</q>
+          <span className="pull-quote-vi">(Anh ấy trông đẹp quá nhỉ)</span>
+        </p>
+      </aside>
+
       {/* ─── Search ──────────────────────────────── */}
       <div className="search-section">
         <div className="search-bar">
