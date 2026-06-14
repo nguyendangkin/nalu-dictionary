@@ -30,6 +30,28 @@ const LETTER_GROUPS = '#abcdefghijklmnopqrstuvwxyz'.split('')
 
 const sampleWords = ['mela', 'hani', 'yela', 'lani', 'fena', 'vaena', 'selai', 'aili']
 
+function speak(text: string) {
+  if (!text.trim()) return
+  const u = new SpeechSynthesisUtterance(text)
+  u.lang = 'fr-FR'
+  u.rate = 0.9
+  // pick a French voice (prefer female)
+  const voices = speechSynthesis.getVoices()
+  const fv = voices.find(v => v.lang.startsWith('fr') && /female|marie|julie|audrey|samantha/i.test(v.name))
+       || voices.find(v => v.lang.startsWith('fr'))
+  if (fv) u.voice = fv
+  // if voices not loaded yet, pick voice on voiceschanged
+  if (voices.length === 0) {
+    speechSynthesis.addEventListener('voiceschanged', () => {
+      const vs = speechSynthesis.getVoices()
+      const v = vs.find(v => v.lang.startsWith('fr') && /female|marie|julie|audrey|samantha/i.test(v.name))
+            || vs.find(v => v.lang.startsWith('fr'))
+      if (v) u.voice = v
+    }, { once: true })
+  }
+  speechSynthesis.speak(u)
+}
+
 interface PhraseWord {
   /** The full original token (e.g. "hiểu," or "Nỗi") */
   original: string
@@ -233,6 +255,11 @@ function App() {
         <section className="phrase-panel">
           <div className="phrase-header">
             <span className="phrase-label">Chuyển ngữ</span>
+            <button className="speak-btn" onClick={() => speak(
+              phraseTokens.map(w => w.translated ?? w.clean).filter(Boolean).join(' ')
+            )}>
+              ▶
+            </button>
           </div>
 
           <div className="phrase-block">
@@ -308,6 +335,7 @@ function App() {
                   <span className="entry-vi">{entry.vi}</span>
                   <span className="entry-arrow">→</span>
                   <span className="entry-new">{entry.newWord}</span>
+                  <button className="speak-btn-sm" onClick={() => speak(entry.newWord)}>▶</button>
                 </div>
               ))
             )}
