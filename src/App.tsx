@@ -173,7 +173,9 @@ function App() {
       <header className="app-header">
         <div>
           <h1 className="app-title">nalu</h1>
-
+          <p className="app-subtitle">
+            nàng nói một thứ tiếng khác, để tránh người hầu gần bên hiểu
+          </p>
         </div>
       </header>
 
