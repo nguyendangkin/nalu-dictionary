@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
-import { naluDictionary } from './naluDictionary'
+import { naleiDictionary } from './naleiDictionary'
 import './App.css'
 
 type FilterMode = 'all' | 'vi' | 'new'
@@ -9,12 +9,12 @@ interface Entry {
   newWord: string
 }
 
-const entries: Entry[] = Object.entries(naluDictionary)
+const entries: Entry[] = Object.entries(naleiDictionary)
   .map(([vi, newWord]) => ({ vi, newWord }))
   .sort((a, b) => a.vi.localeCompare(b.vi, 'vi'))
 
 const dictLower = new Map<string, string>()
-for (const [vi, nw] of Object.entries(naluDictionary)) {
+for (const [vi, nw] of Object.entries(naleiDictionary)) {
   dictLower.set(vi.toLowerCase(), nw)
 }
 
@@ -172,7 +172,7 @@ function App() {
       {/* ─── Header ─────────────────────────────── */}
       <header className="app-header">
         <div>
-          <h1 className="app-title">nalu</h1>
+          <h1 className="app-title">nalei</h1>
 
         </div>
       </header>
@@ -180,9 +180,9 @@ function App() {
       {/* ─── Pull Quote ──────────────────────────── */}
       <aside className="pull-quote">
         <p>
-          Nàng nghiêng người thì thầm với ông bằng Verian, thứ ngôn ngữ mà con cháu các gia đình giàu có thường được học từ thuở nhỏ, và cũng là thứ tiếng mà cô hầu gái kia hẳn không thể hiểu.
+          Nàng nghiêng người thì thầm với ông bằng tiếng Nalei, thứ ngôn ngữ mà con cháu các gia đình giàu có thường được học từ thuở nhỏ, và cũng là thứ tiếng mà cô hầu gái kia hẳn không thể hiểu.
         </p>
-        <p className="pull-quote-nalu">
+        <p className="pull-quote-nalei">
           <q>Wavo nifoi yamai vuyo jieli reuja verio?</q> <span className="pull-quote-vi">(Cô ấy trông dễ thương quá nhỉ?)</span>
         </p>
         <p>

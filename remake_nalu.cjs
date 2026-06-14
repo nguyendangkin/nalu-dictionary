@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- *  remake_nalu.cjs — Sinh lại toàn bộ từ điển nalu
+ *  remake_nalu.cjs — Sinh lại toàn bộ từ điển nalei
  *  
  *  Triết lý: mềm mại, thanh lịch, lãng mạn, mượt mà, nhẹ nhàng
  *  Cảm hứng: tiếng Ý và Pháp
@@ -130,7 +130,7 @@ function generateAllWords(syllables) {
 // ═══════════════════════════════════════════════════════════
 
 console.log('=== Đọc từ điển cũ ===');
-const content = fs.readFileSync('src/naluDictionary.tsx', 'utf-8');
+const content = fs.readFileSync('src/naleiDictionary.tsx', 'utf-8');
 const viWords = [];
 const re = /'([^']+)':\s*'([a-z]+)'(?:,|$)/g;
 let m;
@@ -226,7 +226,7 @@ console.log(`  Trung bình: ${avg.toFixed(2)} âm tiết/từ`);
 
 const keys = Object.keys(dict).sort((a, b) => a.localeCompare(b, 'vi'));
 
-let output = `// nalu — Ánh xạ từ vựng theo quy tắc ngữ âm
+let output = `// nalei — Ánh xạ từ vựng theo quy tắc ngữ âm
 //
 // Quy tắc:
 //   - Phụ âm mềm: l, m, n, r, v, s, f, y, j, w
@@ -242,7 +242,7 @@ let output = `// nalu — Ánh xạ từ vựng theo quy tắc ngữ âm
 // Phân bố âm tiết: ${Object.entries(sylDist).sort((a,b) => a[0]-b[0]).map(([s,c]) => s + ' âm tiết: ' + c + ' (' + (c/keys.length*100).toFixed(1) + '%)').join('; ')}
 // Trung bình: ${avg.toFixed(2)} âm tiết/từ
 
-export const naluDictionary: Record<string, string> = {\n`;
+export const naleiDictionary: Record<string, string> = {\n`;
 
 for (const key of keys) {
   output += `  '${key}': '${dict[key]}',\n`;
@@ -250,6 +250,6 @@ for (const key of keys) {
 
 output += '}\n';
 
-fs.writeFileSync('src/naluDictionary.tsx', output, 'utf-8');
-console.log('\n✅ Đã ghi src/naluDictionary.tsx');
+fs.writeFileSync('src/naleiDictionary.tsx', output, 'utf-8');
+console.log('\n✅ Đã ghi src/naleiDictionary.tsx');
 console.log(`📁 ${keys.length} mục từ — ${Object.keys(sylDist).length} cấp âm tiết`);

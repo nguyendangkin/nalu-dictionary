@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   nalu
+   nalei
    ═══════════════════════════════════════════════════ */
 
 .app {
@@ -55,16 +55,16 @@
   text-indent: 1.5em;
 }
 
-.pull-quote-nalu {
+.pull-quote-nalei {
   margin-top: 6px;
 }
 
-.pull-quote-nalu q {
+.pull-quote-nalei q {
   font-style: italic;
 }
 
-.pull-quote-nalu q::before { content: '\201C'; }
-.pull-quote-nalu q::after  { content: '\201D'; }
+.pull-quote-nalei q::before { content: '\201C'; }
+.pull-quote-nalei q::after  { content: '\201D'; }
 
 .pull-quote-vi {
   font-style: normal;

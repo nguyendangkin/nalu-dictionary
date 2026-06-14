@@ -1,4 +1,4 @@
-// nalu — Ánh xạ từ vựng theo quy tắc ngữ âm
+// nalei — Ánh xạ từ vựng theo quy tắc ngữ âm
 //
 // Quy tắc:
 //   - Phụ âm mềm: l, m, n, r, v, s, f, y, j, w
@@ -14,7 +14,7 @@
 // Phân bố âm tiết: 1 âm tiết: 46 (0.7%); 2 âm tiết: 6596 (99.3%)
 // Trung bình: 1.99 âm tiết/từ
 
-export const naluDictionary: Record<string, string> = {
+export const naleiDictionary: Record<string, string> = {
   'a': 'la',
   'à': 'mi',
   'ả': 'sa',
