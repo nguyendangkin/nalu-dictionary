@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f2f0;
+  --surface: #ffffff;
+  --text: #2b2838;
+  --text-subtle: #8e89a0;
+  --text-muted: #b2adc0;
+  --title: #1a1726;
+  --accent: #6b5b8d;
+  --accent-soft: #eae6f2;
+  --accent-glow: rgba(107, 91, 141, 0.10);
+  --border: #e3deea;
+  --border-subtle: #efebf3;
+  --separator: #e9e5ef;
+  --shadow-sm: 0 1px 2px rgba(40, 30, 60, 0.05);
+  --shadow-md: 0 2px 8px rgba(40, 30, 60, 0.06);
+  --shadow-lg: 0 4px 16px rgba(40, 30, 60, 0.08);
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --serif: 'Lora', Georgia, 'Noto Serif', 'Times New Roman', serif;
+  --mono: ui-monospace, 'SF Mono', Consolas, 'Noto Sans Mono', monospace;
+
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--title);
+}
