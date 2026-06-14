@@ -19,16 +19,31 @@ for (const [vi, nw] of Object.entries(naluDictionary)) {
 }
 
 const RULES = [
-  { label: 'Phụ âm ưu tiên', value: 'l, m, n, s, h, v, y, f' },
-  { label: 'Phụ âm hiếm', value: 'r (~5%)' },
-  { label: 'Nguyên âm', value: 'a, e, i, o, u' },
-  { label: 'Nguyên âm đôi', value: 'ae, ai, ia, ei, oa' },
-  { label: 'Cấu trúc', value: 'CV · CVCV · CVCVV · CVCVCV' },
+  {
+    title: 'Phụ âm',
+    items: [
+      { label: 'Mềm', value: 'l, m, n, r, v, s, f, y, j, w' },
+    ],
+  },
+  {
+    title: 'Nguyên âm',
+    items: [
+      { label: 'Đơn', value: 'a, e, i, o, u' },
+      { label: 'Đôi', value: 'ai, ei, ia, ie, io, oi, ua, au, eu' },
+    ],
+  },
+  {
+    title: 'Cấu trúc âm tiết',
+    items: [
+      { label: 'Dạng', value: 'CV · CVV · CVC' },
+      { label: 'Phụ âm cuối', value: 'l, m, n, r' },
+    ],
+  },
 ]
 
 const LETTER_GROUPS = '#abcdefghijklmnopqrstuvwxyz'.split('')
 
-const sampleWords = ['mela', 'hani', 'yela', 'lani', 'fena', 'vaena', 'selai', 'aili']
+const sampleWords = ['roma', 'lore', 'voimo', 'linia', 'nurai', 'roime', 'sowe', 'mijau']
 
 function speak(text: string) {
   if (!text.trim()) return
@@ -191,32 +206,49 @@ function App() {
         <button
           className="rules-toggle"
           onClick={() => setShowRules(s => !s)}
+          aria-label="Quy tắc ngữ âm"
         >
-          {showRules ? '▲' : '▼'}
-          <span>Quy tắc</span>
+          <span className="rules-toggle-icon">{showRules ? '✕' : '◈'}</span>
+          <span className="rules-toggle-label">Quy tắc</span>
         </button>
       </header>
 
-      {/* ─── Rules Panel ─────────────────────────── */}
+      {/* ─── Rules Dropdown ──────────────────────── */}
       {showRules && (
-        <section className="rules-panel">
-          <div className="rules-grid">
-            {RULES.map(r => (
-              <div key={r.label} className="rule-item">
-                <span className="rule-label">{r.label}</span>
-                <span className="rule-value">{r.value}</span>
+        <div className="rules-overlay" onClick={() => setShowRules(false)} />
+      )}
+      <div className={`rules-dropdown ${showRules ? 'open' : ''}`}>
+        <div className="rules-dropdown-inner">
+          <div className="rules-groups">
+            {RULES.map(group => (
+              <div key={group.title} className="rules-group">
+                <h3 className="rules-group-title">{group.title}</h3>
+                {group.items.map(item => (
+                  <div key={item.label} className="rules-group-item">
+                    <span className="rules-group-label">{item.label}</span>
+                    <span className="rules-group-value">{item.value}</span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
           <div className="rules-samples">
-            <span className="rules-samples-label">Ví dụ</span>
-            {sampleWords.map(w => (
-              <code key={w} className="sample-word">{w}</code>
-            ))}
+            <h3 className="rules-sample-title">Ví dụ</h3>
+            <div className="rules-sample-chips">
+              {sampleWords.map(w => (
+                <button
+                  key={w}
+                  className="rules-chip"
+                  onClick={() => speak(w)}
+                  title="Nghe"
+                >
+                  {w}
+                </button>
+              ))}
+            </div>
           </div>
-
-        </section>
-      )}
+        </div>
+      </div>
 
       {/* ─── Search ──────────────────────────────── */}
       <div className="search-section">
