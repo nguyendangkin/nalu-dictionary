@@ -182,14 +182,14 @@ function App() {
       {/* ─── Pull Quote ──────────────────────────── */}
       <aside className="pull-quote">
         <p>
-          Huế, cuối thế kỷ XIX. Giữa giới thượng lưu, một thứ tiếng lạ bắt đầu len lỏi — không phải tiếng Pháp của người cai trị, cũng chẳng phải tiếng bản xứ của kẻ hầu người hạ. Đó là một thứ âm thanh mềm mại, như những lời thì thầm, một thứ tiếng đã ăn vào máu của tầng lớp giàu có, để họ có thể nói với nhau bất cứ điều gì — ngay trước mặt đầy tớ, mà chẳng sợ ai hiểu.
+          Dưới ánh nến, bên tách trà còn nóng, nàng nghiêng người thì thầm với ông bằng một thứ tiếng lạ — mềm, nhẹ, như một mật mã chỉ hai người biết:
         </p>
         <p className="pull-quote-nalu">
-          Nàng nghiêng người thì thầm với ông: <q>Reli nifoi yamai mijau reuja verio?</q>
+          <q>Reli nifoi yamai mijau reuja verio?</q>
           <span className="pull-quote-vi">(Cô ấy trông dễ thương quá nhỉ)</span>
         </p>
         <p>
-          Cô hầu gái vẫn đứng đó, mắt nhìn xuống. Ông khẽ cười, khẽ gật. Một lời khen vừa được trao đi — ngay trước mặt người được khen — mà chẳng ai hay.
+          Cô hầu gái bưng trà vẫn đứng đó, không hiểu một từ.
         </p>
       </aside>
 
