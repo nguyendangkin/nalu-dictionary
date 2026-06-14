@@ -47,10 +47,12 @@
   font-size: 15px;
   line-height: 1.9;
   color: var(--text);
+  text-align: justify;
 }
 
 .pull-quote p {
   margin: 0;
+  text-indent: 1.5em;
 }
 
 .pull-quote-nalu {
