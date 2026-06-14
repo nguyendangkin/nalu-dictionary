@@ -173,9 +173,7 @@ function App() {
       <header className="app-header">
         <div>
           <h1 className="app-title">nalu</h1>
-          <p className="app-subtitle">
-            nulo yuyale voami mova vianu lavu
-          </p>
+
         </div>
       </header>
 
